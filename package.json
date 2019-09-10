@@ -1,0 +1,62 @@
+{
+    "name": "psex-script-support",
+    "displayName": "PSExtendScript-Support",
+    "description": "Photoshop拡張スクリプト開発言語サポートエクステンションです",
+    "version": "0.0.1",
+    "publisher": "k_wth",
+    "engines": {
+        "vscode": "^1.38.0"
+    },
+    "categories": [
+        "Other",
+        "Programming Languages",
+        "Snippets"
+    ],
+    "activationEvents": [
+		"*"
+	],
+    "main": "./out/extension.js",
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "lint": "tslint -p ./",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/node": "^10.12.18",
+        "tslint": "^5.16.0",
+        "typescript": "^3.5.1",
+        "@types/vscode": "^1.32.0"
+    },
+    "contributes": {
+        "languages": [
+            {
+                "id": "jsx",
+                "aliases": [
+                    "jsx"
+                ],
+                "extensions": [
+                    ".jsx"
+                ],
+                "firstLine": "#target photoshop;",
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "js",
+                "extensions": [
+                    ".js"
+                ]
+            }
+        ],
+        "snippets": [
+            {
+                "language": "jsx",
+                "firstLine": "#target photoshop;",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    },
+    "dependencies": {
+        "vscode": "^1.1.36"
+    }
+}
