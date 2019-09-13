@@ -47,7 +47,16 @@ export function activate(context: vscode.ExtensionContext) {
 	
 					let completions : Array<vscode.CompletionItem> = [];
 					let linePrefix = document.lineAt(position).text.substr(0, position.character);
-					if (new RegExp(`${prefix}.$`).test(linePrefix))
+					var regStr = "";
+					if(Array.isArray(prefix))
+					{
+						prefix.forEach(p => {
+							if(regStr != "") regStr += "|";
+							regStr += `${p}.$`;
+						});
+					}
+					else regStr = `${prefix}.$`;
+					if (new RegExp(regStr).test(linePrefix))
 					{
 						methods.forEach(e => {
 							var detail = e.name.replace(/{|}/g,"");
@@ -109,7 +118,16 @@ export function activate(context: vscode.ExtensionContext) {
 					let completions : Array<vscode.CompletionItem> = [];
 	
 					let linePrefix = document.lineAt(position).text.substr(0, position.character);
-					if (new RegExp(`${prefix}.$`).test(linePrefix))
+					var regStr = "";
+					if(Array.isArray(prefix))
+					{
+						prefix.forEach(p => {
+							if(regStr != "") regStr += "|";
+							regStr += `${p}.$`;
+						});
+					}
+					else regStr = `${prefix}.$`;
+					if (new RegExp(regStr).test(linePrefix))
 					{
 						properties.forEach(p => {
 							const completion = new vscode.CompletionItem
