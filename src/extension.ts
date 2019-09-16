@@ -69,24 +69,30 @@ export function activate(context: vscode.ExtensionContext) {
 							completion.detail = `(method) ${detail}`;
 							if(e.params != null)
 							{
-								completion.detail += "\n- " + getJoinString(e.params,"\n- ");
+								var method_params = e.name.replace(/(.*)\(| |\[|\]|\)/g,"").split(",");
+								for(var i=0;i<method_params.length;i++)
+								{
+									if(e.params[i] == undefined || e.params[i] == null) break;
+									if(completion.detail != "") completion.detail += "\n";
+									completion.detail += `- ${method_params[i]}: ${e.params[i]}`
+								}
 							}
 							completion.filterText = `${prefix}.${name}`;
 							// insertText ---------
 							var insert  = e.name;
 							insert = insert.replace(/\[(.*)\]/,""); // optionは一度抜いておく
-							var params = e.name.match(/\{([^\{]+)\}/g);
+							var params = insert.match(/[\(| |\,]([^\,| |\)]+)[\)| |\,]/g);
 							if(params != null && params != undefined)
 							{
 								for (let i = 0; i < params.length; i++) {
-									const p = params[i].replace("{","");
-									insert = insert.replace(`\{${p}`,`$\{${i+1}:${p}`);
+									const p = params[i].replace(/\(|\)|\,| /g,"");
+									insert = insert.replace(`${p}`,`$\{${i+1}:${p}}`);
 								}
 							}
 							completion.insertText = new vscode.SnippetString(insert);
 		
 							// document ---------
-							if(e.document != undefined && e.document != "")
+							if(e.document != undefined)
 							{
 								completion.documentation = new vscode.MarkdownString(getJoinString(e.document,"\n\n"));
 							} 
@@ -206,5 +212,4 @@ export function activate(context: vscode.ExtensionContext) {
 		);
 		context.subscriptions.push(enum_provider);
 	});
-
 }
