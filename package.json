@@ -3,7 +3,7 @@
     "displayName": "PSExtendScript-Support",
     "description": "Photoshop拡張スクリプト開発言語サポートエクステンションです",
     "version": "0.0.1",
-    "publisher": "k_wth",
+    "publisher": "k-wth",
     "engines": {
         "vscode": "^1.38.0"
     },
@@ -13,8 +13,8 @@
         "Snippets"
     ],
     "activationEvents": [
-		"*"
-	],
+        "*"
+    ],
     "main": "./out/extension.js",
     "scripts": {
         "vscode:prepublish": "npm run compile",
@@ -57,6 +57,7 @@
         ]
     },
     "dependencies": {
+        "vsce": "^1.66.0",
         "vscode": "^1.1.36"
     }
 }
