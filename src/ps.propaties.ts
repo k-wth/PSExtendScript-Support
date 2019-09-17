@@ -2,7 +2,7 @@ export function get(){
 	return [
 		// app(Application) のメソッド ---------------------------------------------
 		{
-			prefix : "app",
+			prefix : ["app","Application"],
 			properties : [
 				{
 					name : "activeDocument",
@@ -152,198 +152,209 @@ export function get(){
 			]
 		},
 		{
-			prefix : "_doc",
-			// prefix : ["_doc","document","Document"],
+			prefix : ["_doc","document","Document"],
 			properties : [
 				{
 					name : "activeChannels",
 					detail : "array<Channel>",
-					document : ""
+					document : "Read-write. The selected channels."
 				},
 				{
 					name : "activeHistoryBrushSource",
 					detail : "Guide",
-					document : ""
+					document : "Read-write. The history state to use with the history brush."
 				},
 				{
 					name : "activeHistoryState",
 					detail : "Guide",
-					document : ""
+					document : "Read-write. The selected HistoryState object."
 				},
 				{
 					name : "activeLayer",
 					detail : "ArtLayer | LayerSet",
-					document : ""
+					document : "Read-write. The selected layer."
 				},
 				{
 					name : "artLayers",
 					detail : "ArtLayers",
-					document : ""
+					document : "Read-only. The art layers collection."
 				},
 				{
 					name : "backgroundLayer",
 					detail : "ArtLayer",
-					document : ""
+					document : "Read-only. The background layer of the document."
 				},
 				{
 					name : "bitsPerChannel",
 					detail : "BitsPerChannelType",
-					document : ""
+					document : "Read-write. The number of bits per channel."
 				},
 				{
 					name : "channels",
 					detail : "Channels",
-					document : ""
+					document : "Read-only. The channels collection."
 				},
 				{
 					name : "colorProfileName",
 					detail : "string",
-					document : ""
+					document : [
+						"Read-write. The name of the color profile.",
+						"Valid only when ```colorProfileType = ColorProfile.CUSTOM``` or ```WORKING```."
+					]
 				},
 				{
 					name : "colorProfileType",
 					detail : "ColorProfileType",
-					document : ""
+					document : "Read-write. Whether the document uses the working color profile, a custom profile, or no profile."
 				},
 				{
 					name : "colorSamplers",
 					detail : "ColorSamplers",
-					document : ""
+					document : "Read-only. The current color samplers associated with this document."
 				},
 				{
 					name : "componentChannels",
 					detail : "array<Channel>",
-					document : ""
+					document : "Read-only. The color channels that make up the document; for instance, the Red, Green, and Blue channels for an RGB document."
 				},
 				{
 					name : "countItems",
 					detail : "CountItems",
-					document : ""
+					document : [
+						"Read-only. The current count items.",
+						"***Note:*** For additional information about count items, see Adobe Photoshop CC help on the Count Tool."
+					]
 				},
 				{
 					name : "fullName",
 					detail : "File",
-					document : ""
+					document : "Read-only. The full path name of the document."
 				},
 				{
 					name : "guides",
 					detail : "Guides",
-					document : ""
+					document : "Read-only. The guides collection."
 				},
 				{
 					name : "height",
 					detail : "UnitValue",
-					document : ""
+					document : "Read-only. The height of the document (unit value)."
 				},
 				{
 					name : "histogram",
 					detail : "array<number>",
-					document : ""
+					document : [
+						"Read-only. A histogram showing the number of pixels at each color intensity level for the composite channel. The array c ontains 256 members.",
+						"Valid only when ```mode = DocumentMode.RGB, CMYK;``` or ```INDEXEDCOLOR```."
+					]
 				},
 				{
 					name : "historyStates",
 					detail : "HistoryStates",
-					document : ""
+					document : "Read-only. The history states collection."
 				},
 				{
 					name : "info",
 					detail : "DocumentInfo",
-					document : ""
+					document : "Read-only. Metadata about the document."
 				},
 				{
 					name : "layerComps",
 					detail : "LayerComps",
-					document : ""
+					document : "Read-only. The layer compositions collection."
 				},
 				{
 					name : "layers",
 					detail : "Layers",
-					document : ""
+					document : "Read-only. The layers collection."
 				},
 				{
 					name : "layerSets",
 					detail : "LayerSets",
-					document : ""
+					document : "Read-only. The layer set collection."
 				},
 				{
 					name : "managed",
 					detail : "boolean",
-					document : ""
+					document : "Read-only. True if the document a is workgroup document."
 				},
 				{
 					name : "measurementScale",
 					detail : "MeasurementScale",
-					document : ""
+					document : [
+						"Read-only. The measurement scale for the document.",
+						"***Note:*** The measurement scale feature is available in the Extended version only."
+					]
 				},
 				{
 					name : "mode",
 					detail : "DocumentMode",
-					document : ""
+					document : "Read-only. The color profile."
 				},
 				{
 					name : "name",
 					detail : "string",
-					document : ""
+					document : "Read-only. The document's name."
 				},
 				{
 					name : "parent",
 					detail : "Application",
-					document : ""
+					document : "Read-only. The application object that contains this document."
 				},
 				{
 					name : "path",
 					detail : "File",
-					document : ""
+					document : "Read-only. The path to the document."
 				},
 				{
 					name : "pathItems",
 					detail : "PathItems",
-					document : ""
+					document : "Read-only. The path items collection."
 				},
 				{
 					name : "pixelAspectRatio",
 					detail : "number [0.100..10.000]",
-					document : ""
+					document : "Read-write. The (custom) pixel aspect ratio to use."
 				},
 				{
 					name : "printSettings",
 					detail : "DocumentPrintSettings",
-					document : ""
+					document : "Read-only. The print settings for the document."
 				},
 				{
 					name : "quickMaskMode",
 					detail : "boolean",
-					document : ""
+					document : "Read-write. True if the document is in Quick Mask mode."
 				},
 				{
 					name : "resolution",
 					detail : "number",
-					document : ""
+					document : "Read-only. The document’s resolution (in pixels per inch)."
 				},
 				{
 					name : "saved",
 					detail : "boolean",
-					document : ""
+					document : "Read-only. True if the document has been saved since the last change."
 				},
 				{
 					name : "selection",
 					detail : "Selection",
-					document : ""
+					document : "Read-only. The selected area of the document."
 				},
 				{
 					name : "typename",
 					detail : "string",
-					document : ""
+					document : "Read-only. The class name of the Document object."
 				},
 				{
 					name : "width",
 					detail : "UnitValue",
-					document : ""
+					document : "Read-only. The width of the document (unit value)."
 				},
 				{
 					name : "xmpMetadata",
 					detail : "xmpMetadata",
-					document : ""
+					document : "Read-only. XMP metadata for the document. Camera RAW settings for the image are stored here for example."
 				}
 			]
 		}

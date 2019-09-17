@@ -3,5 +3,10 @@
 		"prefix": "#target photoshop;",
 		"body": ["#target photoshop;"],
 		"description": ""
+	},
+	"document.close_nosave": {
+		"prefix": "$ps.close_document_nosave",
+		"body": ".close(SaveOptions.DONOTSAVECHANGES);",
+		"description": ""
 	}
 }
