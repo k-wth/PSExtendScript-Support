@@ -2,7 +2,7 @@
     "name": "psex-script-support",
     "displayName": "PSExtendScript-Support",
     "description": "Photoshop拡張スクリプト開発言語サポートエクステンションです",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "publisher": "k-wth",
     "engines": {
         "vscode": "^1.38.0"
