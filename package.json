@@ -24,9 +24,10 @@
     },
     "devDependencies": {
         "@types/node": "^10.12.18",
+        "@types/vscode": "^1.32.0",
         "tslint": "^5.16.0",
         "typescript": "^3.5.1",
-        "@types/vscode": "^1.32.0"
+        "vsce": "^1.66.0"
     },
     "contributes": {
         "languages": [
@@ -57,7 +58,6 @@
         ]
     },
     "dependencies": {
-        "vsce": "^1.66.0",
-        "vscode": "^1.1.36"
+        
     }
 }
