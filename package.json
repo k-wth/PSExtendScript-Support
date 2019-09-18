@@ -33,26 +33,21 @@
         "languages": [
             {
                 "id": "jsx",
-                "aliases": [
-                    "jsx"
-                ],
-                "extensions": [
-                    ".jsx"
-                ],
-                "firstLine": "#target photoshop;",
+                "aliases": [ "jsx"],
+                "extensions": [ ".jsx" ],
                 "configuration": "./language-configuration.json"
-            },
+            }
+        ],
+        "grammars": [
             {
-                "id": "js",
-                "extensions": [
-                    ".js"
-                ]
+                "language": "jsx",
+                "scopeName": "source.js",
+                "path": "./syntaxes/JavaScript.tmLanguage.json"
             }
         ],
         "snippets": [
             {
                 "language": "jsx",
-                "firstLine": "#target photoshop;",
                 "path": "./snippets/snippets.json"
             }
         ]
