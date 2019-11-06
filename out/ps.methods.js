@@ -902,6 +902,92 @@ function get() {
                     document: []
                 }
             ]
+        },
+        {
+            prefix: ["_layers", "layers", "Layers", "LayerSet"],
+            methods: [
+                {
+                    name: "duplicate([relativeObject][, insertionLocation])",
+                    params: [
+                        "ArtLayer or LayerSet",
+                        "ElementPlacement"
+                    ],
+                    document: [
+                        "Creates a duplicate of the object."
+                    ]
+                },
+                {
+                    name: "link(with)",
+                    params: [
+                        "ArtLayer or LayerSet"
+                    ],
+                    document: [
+                        "Links the layer set with another layer."
+                    ]
+                },
+                {
+                    name: "merge()",
+                    params: [],
+                    document: [
+                        "Merges the layerset; returns a reference to the art layer created by this method."
+                    ]
+                },
+                {
+                    name: "move(relativeObject, insertionLocation)",
+                    params: [
+                        "ArtLayer or LayerSet",
+                        "ElementPlacement"
+                    ],
+                    document: [
+                        "Moves the object."
+                    ]
+                },
+                {
+                    name: "remove()",
+                    params: [],
+                    document: [
+                        "Deletes the object."
+                    ]
+                },
+                {
+                    name: "resize([horizontal] [, vertical] [, anchor])",
+                    params: [
+                        "number",
+                        "number",
+                        "AnchorPosition"
+                    ],
+                    document: [
+                        "Resizes all layers in the layer set to to the specified dimensions (as a percentage of its current size) and places the layer set in the specified position."
+                    ]
+                },
+                {
+                    name: "rotate(angle [, anchor])",
+                    params: [
+                        "number",
+                        "AnchorPosition"
+                    ],
+                    document: [
+                        "Rotates all layers in the layer set around the specified anchor point (default: ```AnchorPosition.MIDDLECENTER```)"
+                    ]
+                },
+                {
+                    name: "translate([deltaX] [, deltaY])",
+                    params: [
+                        "UnitValue",
+                        "UnitValue"
+                    ],
+                    document: [
+                        "Moves the position relative to its current position."
+                    ]
+                },
+                {
+                    name: "unlink()",
+                    params: [],
+                    document: [
+                        "Unlinks the layer set."
+                    ]
+                }
+            ]
         }
     ];
 }
